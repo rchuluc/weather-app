@@ -66,7 +66,10 @@ export default class App extends React.Component {
         style={styles.imageContainer}
         imageStyle={styles.image}
       >
-        <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <KeyboardAvoidingView
+          style={styles.container}
+          behavior={Platform.OS === 'ios' ? 'padding' : ''}
+        >
           <StatusBar barStyle="light-content" />
           <View style={styles.detailsContainer}>
             <ActivityIndicator animating={loading} color="white" size="large" />
